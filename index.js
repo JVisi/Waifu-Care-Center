@@ -1,19 +1,26 @@
 const express=require('express');
 const cors=require('cors');
-const squer=require('./lib/ORM/setting').sequelize;
 
-
-const {Waifu}=require('./lib/ORM/Models/waifu');
-const {Anime}=require('./lib/ORM/Models/anime');
-const {Harem}=require('./lib/ORM/Models/harem');
-Harem.findAll({include:[Waifu]}).then((result)=>{
-    console.log(result[0].waifu);
-});
-
+/*
+const config=require('./lib/config');
+async function tokenshit(heli){
+    let token=await config.signToken(heli);
+    config.verifyTokenAsync(token).then((value)=>{
+        console.log("helo");
+    },
+    (rejectValue)=>{
+        console.log("nem helo");
+    });
+}
+tokenshit("asd");
+*/
 const port= process.env.port || 3000;
 const app=express();
-app.use(cors);
 
+app.use('/', function (req, res) {
+    console.log("helo")
+    res.send('hello world')
+  })
 app.listen(port,()=>{
     console.info(`app listen on ${port}`);
 });
