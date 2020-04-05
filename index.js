@@ -1,5 +1,7 @@
 const express=require('express');
 const cors=require('cors');
+const bodyparser=require('body-parser');
+const {router}=require('./lib/router');
 
 /*
 const config=require('./lib/config');
@@ -16,11 +18,9 @@ tokenshit("asd");
 */
 const port= process.env.port || 3000;
 const app=express();
+app.use(bodyparser.json())
 
-app.use('/', function (req, res) {
-    console.log("helo")
-    res.send('hello world')
-  })
+app.use(router);
 app.listen(port,()=>{
     console.info(`app listen on ${port}`);
 });
