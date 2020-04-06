@@ -4,7 +4,9 @@
   "description": "Server for waifu care center game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,13 +18,17 @@
     "url": "https://github.com/JVisi/Waifu-Care-Center/issues"
   },
   "homepage": "https://github.com/JVisi/Waifu-Care-Center#readme",
-  "devDependencies": {
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^5.21.6"
+    "sequelize": "^5.21.6",
+    "uuid": "^7.0.3"
   },
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^2.0.2"
   }
 }
