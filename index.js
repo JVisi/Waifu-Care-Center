@@ -1,5 +1,4 @@
 const express=require('express');
-const cors=require('cors');
 const bodyparser=require('body-parser');
 const {router}=require('./lib/router');
 
@@ -18,6 +17,7 @@ tokenshit("asd");
 */
 const port= process.env.port || 3000;
 const app=express();
+const {sequelize}=require('./lib/ORM/setting');
 app.use(bodyparser.json())
 
 app.use(router);
