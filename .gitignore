@@ -1,3 +1,4 @@
 #dependency directories
+.env
 node_modules/
 WCC_interfaces/
